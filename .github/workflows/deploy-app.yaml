@@ -5,7 +5,7 @@ env:
   repositoryName: techboost/dotnetcoreapp
   dockerFolderPath: ./Application/src/RazorPagesTestSample
   tag: ${{github.run_number}}
-  LOAD_TEST_RESOURCE: rg-demo-loadtesting
+  LOAD_TEST_RESOURCE: lt-demo-loadtesting
   LOAD_TEST_RESOURCE_GROUP: ${{ secrets.AZURE_RG }}
 on:
   push:
