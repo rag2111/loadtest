@@ -81,6 +81,8 @@ jobs:
       url: https://p5kae6yg4vg74-dev.azurewebsites.net/
 
     steps:
+      - uses: actions/checkout@v3
+
       - name: "Login via Azure CLI"
         uses: azure/login@v1
         with:
