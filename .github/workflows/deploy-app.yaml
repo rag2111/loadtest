@@ -1,7 +1,7 @@
 name: .NET CI
 
 env:
-  registryName: lu57md3c5xu5qmpnpreg.azurecr.io
+  registryName: p5kae6yg4vg74mpnpreg.azurecr.io
   repositoryName: techboost/dotnetcoreapp
   dockerFolderPath: ./Application/src/RazorPagesTestSample
   tag: ${{github.run_number}}
@@ -79,7 +79,7 @@ jobs:
     needs: dockerBuildPush
     environment:
       name: dev
-      url: https://lu57md3c5xu5q-dev.azurewebsites.net/
+      url: https://p5kae6yg4vg74-dev.azurewebsites.net/
     
     steps:
       - name: 'Login via Azure CLI'
@@ -90,7 +90,7 @@ jobs:
       - uses: azure/webapps-deploy@v2
         with:
           app-name: 'lu57md3c5xu5q-dev'
-          images: lu57md3c5xu5qmpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
+          images: p5kae6yg4vg74mpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
 
   deploy-to-test:
   
@@ -98,7 +98,7 @@ jobs:
     needs: deploy-to-dev
     environment:
       name: test
-      url: https://lu57md3c5xu5q-test.azurewebsites.net/
+      url: https://p5kae6yg4vg74-test.azurewebsites.net/
     
     steps:
     - uses: actions/checkout@v3
@@ -111,7 +111,7 @@ jobs:
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'lu57md3c5xu5q-test'
-        images: lu57md3c5xu5qmpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
+        images: p5kae6yg4vg74mpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
 
   deploy-to-prod:
   
@@ -119,7 +119,7 @@ jobs:
     needs: deploy-to-test
     environment:
       name: prod
-      url: https://lu57md3c5xu5q-prod.azurewebsites.net/
+      url: https://p5kae6yg4vg74-prod.azurewebsites.net/
     
     steps:
     - uses: actions/checkout@v3
@@ -132,4 +132,4 @@ jobs:
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'lu57md3c5xu5q-prod'
-        images: lu57md3c5xu5qmpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
+        images: p5kae6yg4vg74mpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
