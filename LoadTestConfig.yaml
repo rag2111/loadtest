@@ -1,7 +1,7 @@
 version: v0.1
 testName: devloadtest
 testPlan: LoadTestScript.jmx
-description: "CI/CD Test Run for MP&P load test"
+description: "CI/CD Test Run for demo dev"
 engineInstances: 1
 failureCriteria:
   - avg(response_time_ms) > 600
