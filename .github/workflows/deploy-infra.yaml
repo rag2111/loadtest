@@ -1,10 +1,8 @@
 on:
   workflow_dispatch:
-  workflow_call:
     inputs:
       targetEnv:
         description: 'Environment (dev, test, prod)'
-        default: 'dev'
         required: true
         type: string
 
