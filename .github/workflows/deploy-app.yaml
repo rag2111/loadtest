@@ -78,7 +78,7 @@ jobs:
     needs: dockerBuildPush
     environment:
       name: dev
-      url: https://p5kae6yg4vg74-dev.azurewebsites.net/
+      url: https://ju2k3txicxdw4-dev.azurewebsites.net/
 
     steps:
       - uses: actions/checkout@v3
@@ -90,8 +90,8 @@ jobs:
 
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: "p5kae6yg4vg74-dev"
-          images: p5kae6yg4vg74mpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
+          app-name: "ju2k3txicxdw4-dev"
+          images: ju2k3txicxdw4mpnpreg.azurecr.io/rag/loadtestdemo:${{github.run_number}}
 
       - name: "Azure Load Testing"
         uses: azure/load-testing@v1
@@ -103,7 +103,7 @@ jobs:
             [
               {
               "name": "WEBAPP_DOMAIN",
-              "value": "p5kae6yg4vg74-dev.azurewebsites.net"
+              "value": "ju2k3txicxdw4-dev.azurewebsites.net"
               }
             ]
 
@@ -125,7 +125,7 @@ jobs:
     needs: deploy-to-dev
     environment:
       name: test
-      url: https://p5kae6yg4vg74-test.azurewebsites.net/
+      url: https://ju2k3txicxdw4-test.azurewebsites.net/
 
     steps:
       - uses: actions/checkout@v3
@@ -137,15 +137,15 @@ jobs:
 
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: "p5kae6yg4vg74-test"
-          images: p5kae6yg4vg74mpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
+          app-name: "ju2k3txicxdw4-test"
+          images: ju2k3txicxdw4mpnpreg.azurecr.io/rag/loadtestdemo:${{github.run_number}}
 
   deploy-to-prod:
     runs-on: ubuntu-latest
     needs: deploy-to-test
     environment:
       name: prod
-      url: https://p5kae6yg4vg74-prod.azurewebsites.net/
+      url: https://ju2k3txicxdw4-prod.azurewebsites.net/
 
     steps:
       - uses: actions/checkout@v3
@@ -157,5 +157,5 @@ jobs:
 
       - uses: azure/webapps-deploy@v2
         with:
-          app-name: "p5kae6yg4vg74-prod"
-          images: p5kae6yg4vg74mpnpreg.azurecr.io/techboost/dotnetcoreapp:${{github.run_number}}
+          app-name: "ju2k3txicxdw4-prod"
+          images: ju2k3txicxdw4mpnpreg.azurecr.io/rag/loadtestdemo:${{github.run_number}}
