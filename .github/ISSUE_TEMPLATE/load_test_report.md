@@ -1,4 +1,6 @@
 ---
+name: CI/CD Issue
+about: load test failure is preventing CI/CD
 title: Load test failure
 assignees: rag2111
 labels: bug
