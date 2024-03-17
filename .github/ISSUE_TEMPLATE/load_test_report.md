@@ -1,5 +1,5 @@
 ---
-title: Load test failure!
+title: Load test failure
 assignees: rag2111
 labels: bug
 ---
