@@ -1,11 +1,11 @@
 name: .NET CI
 
 env:
-  registryName: p5kae6yg4vg74mpnpreg.azurecr.io
-  repositoryName: techboost/dotnetcoreapp
+  registryName: ju2k3txicxdw4mpnpreg.azurecr.io
+  repositoryName: rag/loadtestdemo
   dockerFolderPath: ./Application/src/RazorPagesTestSample
   tag: ${{github.run_number}}
-  LOAD_TEST_RESOURCE: lt-demo-loadtesting
+  LOAD_TEST_RESOURCE: alt-workshop
   LOAD_TEST_RESOURCE_GROUP: ${{ secrets.AZURE_RG }}
 on:
   push:
